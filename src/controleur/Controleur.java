@@ -20,25 +20,25 @@ import vue.PanelFormulaire;
 import vue.PanelMois;
 
 /**
- * Contôleur qui vas traiter les actions qui impliquent les différents packages.
- * Elle appartient au package controleur.
+ * <b>Contôleur qui vas traiter les actions qui impliquent les différents packages.<br>
+ * Elle appartient au package controleur.</b>
  * 
  * @author Antoine Limerutti
  * 
- * @see java.awt.event.ActionListener;
+ * @see java.awt.event.ActionListener
  *
  * @version 1.0
  */
 public class Controleur implements ActionListener{
 	/**
-	 * agenda qui vas être utilisé dans le traitement des actions
+	 * Agenda qui vas être utilisé dans le traitement des actions.
 	 *
 	 * @see modeles.Agenda
 	 */
 	private Agenda agenda;
 	
 	/**
-	 * Formulaire qui peut provoquer un ajout dans l'agenda
+	 * PanelFormulaire duquel on vas extraire les données des évènements à ajouter dans l'agenda.
 	 *
 	 * @see vue.PanelFormulaire
 	 */
@@ -71,18 +71,17 @@ public class Controleur implements ActionListener{
 	private int compteur=0;
 	
 	/**
-	 * Timer qui vas gérer la durée des clignotements.
+	 * Timer qui vas gérer la durée des clignotements des éléments du formulaire en cas de mauvaise saisie.
 	 *
 	 * @see javax.swing.Timer
 	 */
 	private Timer[] clignotement;
 
-	/**
 	 /**
-	 * Crée un objet Controleur avec les arguments fournis, s'enregistre à lécoute du formulaire et du calendrier et  instancie le timer.
+	 * Crée un objet Controleur avec les arguments fournis, s'enregistre à lécoute du formulaire, du calendrier et  instancie le timer.
 	 *
 	 * @param parAgenda Agenda dans lequel il vas falloir ajouter les nouveaux évènements.
-	 * @param parFormulaire PanelFormulaire duquel on vas récupérer les données à donner aux nouveaux évènements.
+	 * @param parFormulaire PanelFormulaire depuis lequel on vas récupérer les données à donner aux nouveaux évènements.
 	 * @param parCalendrier PanelFilsCalendrier dans lequel on vas changer le mois courant.
 	 * @param parPanelAffichage PanelAffichage dans lequel on vas actualiser le modèle de la table après ajout d'un évènement.
 	 *
@@ -118,14 +117,14 @@ public class Controleur implements ActionListener{
 		 * 6:tout
 		 */
 	}
-	
+
 	/**
 	 * Action performed qui vas être invoqué lors d'un action sur le calendrier ou sur le formulaire.
-	 * 
-	 * @param ActionEvent évènement qui a eu lieu et qu'il vas falloit traiter
+	 *
+	 * @param event ActionEvent évènement qui a eu lieu et qu'il vas falloit traiter
 	 *
 	 * @see java.awt.ActiveEvent
-	 * 
+	 *
 	 * @author Antoine Limerutti
 	 */
 	public void actionPerformed(ActionEvent event) { //Les trois if ont pour but de faire clignotter les éléments
@@ -152,7 +151,7 @@ public class Controleur implements ActionListener{
 		
 		else if(event.getSource() == formulaire.getAjouter()) {	//si clic sur le bouton ajouter dans le formulaire
 			String titre = formulaire.getTitreTxt().getText();	//on récupère les champs pour créer un nouvel évènement
-			String lieu = formulaire.getLieuTxt().getText();;
+			String lieu = formulaire.getLieuTxt().getText();
 			
 			int heureDebut = formulaire.getHeureDebut().getSelectedIndex();
 			int heureFin = formulaire.getHeureFin().getSelectedIndex();
@@ -168,6 +167,8 @@ public class Controleur implements ActionListener{
 				panelAffichage.reinitModele(date);
 				File fichierAgenda = new File("save" + File.separator + "agenda.ser");
 				LectureEcriture.ecriture(fichierAgenda, agenda);
+				System.out.println(agenda.toString());
+
 			}
 			//sinon, on regarde quel clignotement il faut invoquer.
 			else {
@@ -186,7 +187,6 @@ public class Controleur implements ActionListener{
 					clignotement[1].start();
 				else if(lieu.equals(""))
 					clignotement[2].start();
-				
 			}
 		}
 		//si clic pour faire défiler le calendrier

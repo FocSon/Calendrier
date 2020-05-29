@@ -5,8 +5,8 @@ import java.util.TreeSet;
 import java.util.Iterator;
 
 /**
- * Abstraction d'un calendrier.
- * Appartient au package Modèles.
+ * <b>Abstraction d'un calendrier.<br>
+ * Appartient au package modèles.</b>
  * 
  * @author Isabelle Robba
  * 
@@ -18,6 +18,8 @@ import java.util.Iterator;
 public class CalendrierDuMois {
 	/**
 	 * Collection que vas contenir les dates du calendrier.
+	 *
+	 * @see java.util.Collection
 	 */
 	private Collection <Date> dates;
 	
@@ -62,7 +64,7 @@ public class CalendrierDuMois {
 	 * @author Isabelle Robba
 	 */
 	public String toString(){
-		String chaine = new String();
+		String chaine="";
 		
 		Iterator<Date> iterateur = dates.iterator();
 		
@@ -73,11 +75,11 @@ public class CalendrierDuMois {
 		
 		return chaine;
 	}
-	
+
 	/**
-	 * Retourne la valeur du champ dates.
-	 * 
-	 * @return Collection <Date> qui correspond à la valeur du champ dates.
+	 * Accesseur du champ dates.
+	 *
+	 * @return Collection qui correspond à la valeur du champ dates.
 	 *
 	 * @see modeles.Date
 	 *

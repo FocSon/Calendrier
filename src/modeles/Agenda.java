@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.TreeSet;
 
 /**
- * Abstraction d'un agenda contenant des Evenements.
- * Appartient au package Modeles.
- * Cette classe est sérialisable.
+ * <b>Abstraction d'un agenda contenant des Evenements.<br>
+ * Appartient au package modeles.<br>
+ * Cette classe est sérialisable.</b>
  * 
  * @author Antoine Limerutti
  * 
@@ -19,6 +19,8 @@ import java.util.TreeSet;
 public class Agenda implements Serializable{
 	/**
 	 * HashMap contenant en clef le numéro de semaine et en donnée un TreeSet contenant les Evenements de la semaine.
+	 *
+	 * @see java.util.HashMap
 	 */
 	private HashMap<Integer, TreeSet<Evenement>> hashMapEvent;
 	
@@ -34,7 +36,7 @@ public class Agenda implements Serializable{
 	/**
 	 * Déduit le numéro de semaine de la date de l'evenement, récupère le TreeSet correspondant et y ajoute l'évènement.
 	 * 
-	 * @param event évenement à ajouter au TreeSet correspondant.
+	 * @param event Evenement à ajouter au TreeSet correspondant.
 	 *
 	 * @see modeles.Evenement
 	 *
@@ -42,12 +44,12 @@ public class Agenda implements Serializable{
 	 */
 	public void ajouterEvent(Evenement event) {
 		//si la HashMap ne contient pas la clef on l'ajoute
-		if(! hashMapEvent.containsKey(event.getDate().getSemaine())) {
-			hashMapEvent.put(event.getDate().getSemaine(), new TreeSet<Evenement>());
+		if(! hashMapEvent.containsKey(event.getDate().getNumeroSemaine())) {
+			hashMapEvent.put(event.getDate().getNumeroSemaine(), new TreeSet<Evenement>());
 		}
 
 		//on récupère le TreeSet depuis la HashMap puis on lui ajoute l'évènement
-		hashMapEvent.get(event.getDate().getSemaine()).add(event);
+		hashMapEvent.get(event.getDate().getNumeroSemaine()).add(event);
 	}
 	
 	/**
@@ -63,7 +65,7 @@ public class Agenda implements Serializable{
 	 * @author Antoine Limerutti
 	 */
 	public Collection <Evenement> getEvenementsSemaine (Date date){
-		return hashMapEvent.get(date.getSemaine());
+		return hashMapEvent.get(date.getNumeroSemaine());
 	}
 	
 	/**

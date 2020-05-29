@@ -18,8 +18,8 @@ import controleur.Controleur;
 import modeles.Date;
 
 /**
- * panel qui vas afficher un formulaire à remplire pour ajouter les données dans l'agenda.
- * Appartient au package Vue.
+ * <b>Panel qui vas afficher un formulaire à remplir pour ajouter les données dans l'agenda.<br>
+ * Appartient au package vue.</b>
  *
  * @see javax.swing.JPanel
  *
@@ -104,7 +104,7 @@ public class PanelFormulaire extends JPanel implements ActionListener {
 	/**
 	 * Constructeur de la classe PanelFormulaire qui vas instancier et définir les contraintes de tout les éléments du formulaire.
 	 *
-	 * @param parDate
+	 * @param parDate Date à laquelle il faut construire le formulaire.
 	 *
 	 * @see modeles.Date
 	 *
@@ -304,7 +304,7 @@ public class PanelFormulaire extends JPanel implements ActionListener {
 	}
 
 	/**
-	 * Définit les contraintes pour les objets de type JTextFiels et JTextArea.
+	 * Définit les contraintes pour les objets de type JTextField et JTextArea.
 	 *
 	 * @param x Entier qui indique la position en abscisse de l'élément à ajouter.
 	 * @param y Entier qui indique la position en ordonnée de l'élément à ajouter.
@@ -404,9 +404,13 @@ public class PanelFormulaire extends JPanel implements ActionListener {
 		titretxt.requestFocus();
 		couleurCombo(new Color(255,255,255));				
 		remove(labelTitre);
-		
 		labelTitre.setText(date.toString());
 		labelTitre.setForeground(new Color(0,0,0));
+
+		heureDebut.setSelectedIndex(0);
+		heureFin.setSelectedIndex(0);
+		minutesDebut.setSelectedIndex(0);
+		minutesFin.setSelectedIndex(0);
 		
 		GridBagConstraints contrainte = new GridBagConstraints();
 		

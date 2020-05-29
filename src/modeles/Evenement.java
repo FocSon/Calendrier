@@ -3,9 +3,9 @@ package modeles;
 import java.io.Serializable;
 
 /**
- * Abstraction d'un Evenement ayant une date, un titre, un lieu et une heure de début et de fin.
- * Appartient au package Modeles.
- * Cette classe est sérialisable.
+ * <b>Abstraction d'un Evenement ayant une date, un titre, un lieu et une heure de début et de fin.<br>
+ * Appartient au package modeles.<br>
+ * Cette classe est serializable.</b>
  * 
  * @author Antoine Limerutti
  * 
@@ -16,6 +16,8 @@ import java.io.Serializable;
 public class Evenement implements Serializable, Comparable<Evenement>{
 	/**
 	 * Date de l'évènement
+	 *
+	 * @see modeles.Date
 	 */
 	private Date chDate;
 	
@@ -85,8 +87,8 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 	 * Compare l'objet Evenement appellant et l'objet Evenement fourni en paramètre.
 	 * 
 	 * @param evenement2 Evenement à comparer à l'objet appellant
-	 * 
-	 * @return Entier positif (appellant>argument), negatif (appellant<argument) ou nul (appellant==argument)
+	 *
+	 * @return Entier :<ul><li>positif (appellant sup. argument)</li><li>negatif (appellant inf. argument)</li><li>nul (appellant égal argument)</li></ul>
 	 *
 	 * @author Antoine Limerutti
 	 */
@@ -146,8 +148,8 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 
 	/**
-	 * Donne au champ chDate la valeur de l'argument.
-	 * 
+	 * Modifieur du champ chDate.
+	 *
 	 * @param parDate valeur que l'on veut donner au champ chDate.
 	 *
 	 * @see modeles.Date
@@ -159,8 +161,8 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 
 	/**
-	 * Donne au champ chTitre la valeur de l'argument.
-	 * 
+	 * modifieur du champ chTitre.
+	 *
 	 * @param parTitre Valeur que l'on veut donner au champ chTitre.
 	 * 
 	 * @author Antoine Limerutti
@@ -170,8 +172,8 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 
 	/**
-	 * Donne au champ chLieu la valeur de l'argument.
-	 * 
+	 * Modifieur du champ chLieu.
+	 *
 	 * @param parLieu Valeur que l'on veut donner au champ chLieu.
 	 * 
 	 * @author Antoine Limerutti
@@ -181,8 +183,8 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 	
 	/**
-	 * Retourne la valeur du champ chDate.
-	 * 
+	 * Accesseur du champ chDate.
+	 *
 	 * @return Date qui correspond à la valeur du champ chDate.
 	 *
 	 * @see modeles.Date
@@ -194,7 +196,7 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 
 	/**
-	 * Retourne la valeur du champ chTitre.
+	 * Accesseur du champ chTitre.
 	 * 
 	 * @return String qui correspond à la valeur du champ chTitre.
 	 * 
@@ -205,7 +207,7 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 	
 	/**
-	 * Retourne la valeur du champ chLieu.
+	 * Accesseur du champ chLieu.
 	 * 
 	 * @return String qui correspond à la valeur du champ chLieu.
 	 * 
@@ -216,7 +218,7 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 
 	/**
-	 * Retourne la valeur du champ chHeureDebut.
+	 * Accesseur du champ chHeureDebut.
 	 * 
 	 * @return Entier qui correspond à la valeur du champ chHeureDebut.
 	 * 
@@ -227,7 +229,7 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 
 	/**
-	 * Retourne la valeur du champ chHeureFin.
+	 * Accesseur du champ chHeureFin.
 	 * 
 	 * @return Entier qui correspond à la valeur du champ chHeureFin.
 	 * 
@@ -238,7 +240,7 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 	
 	/**
-	 * Retourne la valeur du champ chMinutesDebut.
+	 * Accesseur du champ chMinutesDebut.
 	 * 
 	 * @return Entier qui correspond à la valeur du champ chMinutesDebut.
 	 * 
@@ -249,7 +251,7 @@ public class Evenement implements Serializable, Comparable<Evenement>{
 		}
 	
 	/**
-	 * Retourne la valeur du champ chMinutesFin.
+	 * Accesseur du champ chMinutesFin.
 	 * 
 	 * @return Entier qui correspond à la valeur du champ chMinutesFin.
 	 * 

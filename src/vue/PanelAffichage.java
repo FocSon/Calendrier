@@ -18,8 +18,8 @@ import modeles.Evenement;
 import modeles.ModeleTable;
 
 /**
- * Panel contenant un scroll pane contenant lui même une table qui contient tout les évènements de l'agenda.
- * Appartient au package Vue.
+ * <b>Panel contenant un scroll pane contenant lui même une table qui affiche tout les évènements de l'agenda.<br>
+ * Appartient au package vue.</b>
  * 
  * @author Antoine Limerutti
  *
@@ -36,7 +36,7 @@ public class PanelAffichage extends JPanel{
 	private ModeleTable modele;
 	
 	/**
-	 * Table des évènements de l'agenda.
+	 * Table des évènements de l'agenda sur une semaine.
 	 *
 	 * @see javax.swing.JTable
 	 */
@@ -50,7 +50,7 @@ public class PanelAffichage extends JPanel{
 	private JScrollPane scrollPane;
 	
 	/**
-	 * Agenda dont les évènements vont être affichés dans la table
+	 * Agenda dont les évènements vont être affichés dans la table.
 	 *
 	 * @see modeles.Agenda
 	 */

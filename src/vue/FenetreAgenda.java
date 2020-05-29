@@ -7,11 +7,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-import modeles.ExceptionDate;
-
 /**
- * Fenetre mère du programme.
- * Appartient au package Vue.
+ * <b>Fenetre mère du programme.<br>
+ * Appartient au package vue.</b>
  * 
  * @author Antoine Limerutti
  * 
@@ -25,13 +23,10 @@ public class FenetreAgenda extends JFrame {
 	 * Construit une fenêtre, définit ses caractéristiques, construit son menu et crée son panel fils (PanelAgenda).
 	 *
 	 * @see vue.PanelAgenda
-	 * @see modeles.ExceptionDate
-	 * 
-	 * @throws ExceptionDate
 	 *
 	 * @author Antoine Limerutti
 	 */
-	public FenetreAgenda() throws ExceptionDate {
+	public FenetreAgenda() {
 		super("Agenda");
 		PanelAgenda panelFils = new PanelAgenda(this);
 		

@@ -6,8 +6,8 @@ import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Modèle de la JTable du panel PanelAffichage.
- * Appartient au package Modeles.
+ * <b>Modèle de la JTable du panel PanelAffichage.<br>
+ * Appartient au package modeles.</b>
  * 
  * @see javax.swing.table.DefaultTableModel
  * 
@@ -18,6 +18,8 @@ import javax.swing.table.DefaultTableModel;
 public class ModeleTable extends DefaultTableModel{
 	/**
 	 * Date de la semaine construite par le modèle.
+	 *
+	 * @see modeles.Date
 	 */
 	private Date date;
 	

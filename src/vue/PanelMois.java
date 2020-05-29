@@ -12,8 +12,8 @@ import modeles.CalendrierDuMois;
 import modeles.Date;
 
 /**
- * Panel qui vas représenter le calendrier du mois avec des BoutonDate.
- * Appartient au package vue.
+ * <b>Panel qui vas représenter le calendrier du mois avec des BoutonDate.<br>
+ * Appartient au package vue.</b>
  *
  * @see javax.swing.JPanel
  *
@@ -92,7 +92,7 @@ public class PanelMois extends JPanel{
 	/**
 	 * Met le contrôleur à l'écoute des boutons du tableau de BoutonDate bouton.
 	 *
-	 * @param controleur
+	 * @param controleur Controleur à mettre à l'écoute des boutons du tableau BoutonDate.
 	 *
 	 * @see controleur.Controleur
 	 *

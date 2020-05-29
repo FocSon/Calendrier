@@ -1,11 +1,10 @@
 package client;
 
-import modeles.ExceptionDate;
 import vue.FenetreAgenda;
 
 /**
- * Classe qui vas lancer le programme.
- * Appartient au package client.
+ * <b>Classe qui vas lancer le programme.<br>
+ * Appartient au package client.</b>
  *
  * @author Antoine Limerutti
  *
@@ -15,15 +14,11 @@ public class Client {
 	/**
 	 * Main du programme.
 	 *
-	 * @param args arguments transmits au programme.
-	 *
-	 * @throws ExceptionDate Erreur sur une date.
-	 *
-	 * @see ExceptionDate
+	 * @param args tableau de chaine de charactère dontenant les arguments transmits au programme.
 	 *
 	 * @author Antoine Limerutti
 	 */
-	public static void main(String[]args) throws ExceptionDate {
+	public static void main(String[]args) {
 		FenetreAgenda fenetre = new FenetreAgenda();
 	}
 }

@@ -5,9 +5,9 @@ import java.io.Serializable;
 import java.util.Calendar;
  
 /**
- * Abstraction d'un date ayant un jour, un mois et une année.
- * Appartient au package Modeles.
- * Cette classe est sérialisable.
+ * <b>Abstraction d'un date ayant un jour, un mois et une année.<br>
+ * Appartient au package modeles.<br>
+ * Cette classe est serialisable.</b>
  * 
  * @author Antoine Limerutti
  * 
@@ -17,22 +17,22 @@ import java.util.Calendar;
  */
 public class Date implements Comparable <Date>, Serializable{
 	/**
-	 * Numéro du jour
+	 * Numéro du jour.
 	 */
 	private int jour;
 	
 	/**
-	 * Numéro du mois
+	 * Numéro du mois.
 	 */
 	private int mois;
 	
 	/**
-	 * numéro de l'année
+	 * Numéro de l'année.
 	 */
   private int annee;
   
 	/**
-	 * numéro du jour de la semaine
+	 * Numéro du jour de la semaine.
 	 */
   private int jourSemaine ;
   
@@ -75,8 +75,8 @@ public class Date implements Comparable <Date>, Serializable{
 	 * 
 	 * @param parDate Date à comparer à l'objet appellant
 	 * 
-	 * @return Entier positif (appellant>argument), negatif (appellant<argument) ou nul (appellant==argument)
-	 * 
+	 * @return Entier :<ul><li>positif (appellant sup. argument)</li><li>negatif (appellant inf. argument)</li><li>nul (appellant égal argument)</li></ul>
+	 *
 	 * @author Antoine Limerutti
 	 */
   public int compareTo (Date parDate) {
@@ -119,8 +119,6 @@ public class Date implements Comparable <Date>, Serializable{
 	 * @return Date correspondant à la date du lendemain de l'objet appellant.
 	 * 
 	 * @author Antoine Limerutti
-	 * 
-	 * @version 1.0
 	 */
   public Date dateDuLendemain ()   {	
     if (jour < dernierJourDuMois(mois,annee))
@@ -136,8 +134,6 @@ public class Date implements Comparable <Date>, Serializable{
 	 * @return Date correspondant à la date de la veille de l'objet appellant.
 	 * 
 	 * @author Antoine Limerutti
-	 * 
-	 * @version 1.0
 	 */
   public Date dateDeLaVeille () {    
 	if (jour > 1)
@@ -189,7 +185,7 @@ public class Date implements Comparable <Date>, Serializable{
 	 * 
 	 */
   public String toString () {
-    String chaine = new String();
+    String chaine;
     switch (jourSemaine) {
 		 case 1: chaine = "dimanche"; break;
 		 case 2: chaine = "lundi"; break;
@@ -198,6 +194,7 @@ public class Date implements Comparable <Date>, Serializable{
 		 case 5: chaine = "jeudi"; break;
 		 case 6: chaine = "vendredi"; break;
 		 case 7: chaine = "samedi"; break;
+		 default: chaine = "erreurJour"; break;
 		}
 	chaine += " " + jour + " ";
 	switch (mois) {
@@ -213,7 +210,8 @@ public class Date implements Comparable <Date>, Serializable{
 		 case 10: chaine += "octobre"; break;
 		 case 11: chaine += "novembre"; break;
 		 case 12: chaine += "décembre"; break;
-		}	
+		 default: chaine = "erreurMois"; break;
+	}
 	return chaine;
   }  
   
@@ -230,8 +228,8 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 
 	/**
-	 * Donne au champ jour la valeur de l'argument et redéfinis la jour de la semaine correspondant.
-	 * 
+	 * Modifieur du champ parJour.
+	 *
 	 * @param parJour valeur que l'on veut donner au champ jour.
 	 * 
 	 * @author Antoine Limerutti
@@ -244,8 +242,8 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 	
 	/**
-	 * Donne au champ mois la valeur de l'argument et redéfinis la jour de la semaine correspondant.
-	 * 
+	 * Modifieur du champ parMois.
+	 *
 	 * @param parMois valeur que l'on veut donner au champ mois.
 	 * 
 	 * @author Antoine Limerutti
@@ -258,8 +256,8 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 	
 	/**
-	 * Donne au champ année la valeur de l'argument et redéfinis la jour de la semaine correspondant.
-	 * 
+	 * Modifieur du champ parAnnee.
+	 *
 	 * @param parAnnee valeur que l'on veut donner au champ annee.
 	 * 
 	 * @author Antoine Limerutti
@@ -272,8 +270,8 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 	
 	/**
-	 * Retourne la valeur du champ jour.
-	 * 
+	 * Accesseur du champ chJour.
+	 *
 	 * @return Integer qui correspond à la valeur du champ jour.
 	 * 
 	 * @author Antoine Limerutti
@@ -284,8 +282,8 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 	
 	/**
-	 * Retourne la valeur du champ mois.
-	 * 
+	 * Accesseur du champ chMois.
+	 *
 	 * @return Integer qui correspond à la valeur du champ mois.
 	 * 
 	 * @author Antoine Limerutti
@@ -296,7 +294,7 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 	
 	/**
-	 * Retourne la valeur du champ annee.
+	 * Accesseur du champ chAnnee.
 	 * 
 	 * @return Integer qui correspond à la valeur du champ annee.
 	 * 
@@ -308,7 +306,7 @@ public class Date implements Comparable <Date>, Serializable{
 	}
 
 	/**
-	 * Retourne la valeur du champ jourSemaine.
+	 * Accesseur du champ jourSemaine.
 	 * 
 	 * @return Integer qui correspond à la valeur du champ jourSemaine.
 	 * 
@@ -318,9 +316,15 @@ public class Date implements Comparable <Date>, Serializable{
 	public int getJourSemaine () {
 		return jourSemaine;
 	}
-	
-	public int getSemaine() {
-		return (new GregorianCalendar(annee,mois-1,jour)).get(Calendar.WEEK_OF_YEAR);
-	}
 
+	/**
+	 * Retourne le numéro de semaine à la date de l'objet appellant pour l'année.
+	 *
+	 * @return Entier correspondant au numéro de semaine dans l'année.
+	 *
+	 * @author Antoine Limerutti
+	 */
+	public int getNumeroSemaine() {
+		return (new GregorianCalendar(annee, mois-1, jour)).get(Calendar.WEEK_OF_YEAR);
+	}
 }  // class Date

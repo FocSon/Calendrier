@@ -9,13 +9,14 @@ import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
 /**
- * Abstraction d'un calendrier.
- * Appartient au package Modeles.
+ * <b>Classe qui vas définir les données à mettre dans la JTable de la classe PanelAffichage.<br>
+ * Appartient au package modeles.</b>
  * 
  * @author Antoine Limerutti
  * 
  * @see javax.swing.table.TableCellRenderer
  * @see javax.swing.JTable
+ * @see vue.PanelAffichage
  *
  * @version 1.0
  */
@@ -53,7 +54,7 @@ public class CelluleRenderer extends JLabel implements TableCellRenderer{
 		cellValue = ((Evenement) cellValue);
 		
 		if(cellValue!=null) {
-			setText(((Evenement) cellValue).toString());
+			setText(cellValue.toString());
 			
 			setToolTipText("Le " + ((Evenement) cellValue).getDate().toString() + ", à " + ((Evenement) cellValue).getLieu().toString() + " vous avez prévu " + ((Evenement) cellValue).getTitre().toString() + " de " + ((Evenement) cellValue).getHeureDebut() + ":" + ((Evenement) cellValue).getMinutesDebut() + " à " + ((Evenement) cellValue).getHeureFin() + ":" + ((Evenement) cellValue).getMinutesFin() + ".");
 		}

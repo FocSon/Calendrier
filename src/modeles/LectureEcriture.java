@@ -8,8 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Class qui vas permettre de sauvegarder et de charger des fichiers.
- * Appartient au package Modeles
+ * <b>Classe qui vas permettre de sauvegarder et de charger des objets dans ou depuis des fichiers.<br>
+ * Appartient au package modeles</b>
  *
  * @author Isabelle Robba
  *
@@ -34,7 +34,7 @@ public class LectureEcriture {
 
 		try {
 			flux = new ObjectInputStream(new FileInputStream (parFichier));
-			objetLu = (Object)flux.readObject ();
+			objetLu = flux.readObject ();
 			flux.close ();
 		}
 		
@@ -60,7 +60,7 @@ public class LectureEcriture {
 	 * @author Isabelle Robba
 	 */
 	public static void ecriture (File parFichier, Object parObjet) {
-		ObjectOutputStream flux = null;
+		ObjectOutputStream flux;
 		// Ouverture du fichier en mode écriture
 		try {
 			flux = new ObjectOutputStream (new FileOutputStream (parFichier));

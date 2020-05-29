@@ -14,19 +14,19 @@ import modeles.Date;
 import modeles.LectureEcriture;
 
 /**
- *Panel comportant le panelAffichage, le panelFormulaire et le panelFilsCalendrier.
- *Appartient au package Vue.
- * 
- *@author Antoine Limerutti
- * 
- *@see javax.swing.JPanel
- *@see java.awt.event.ActionListener;
+ * <b>Panel comportant le panelAffichage, le panelFormulaire et le panelFilsCalendrier.<br>
+ * Appartient au package vue.</b>
  *
- *@version 1.0
+ * @author Antoine Limerutti
+ *
+ * @see javax.swing.JPanel
+ * @see java.awt.event.ActionListener
+ *
+ * @version 1.0
  */
 public class PanelAgenda extends JPanel implements ActionListener{
 	/**
-	 * Fenêtre qui contient le panel (fenêtre mère).
+	 * JFrame qui contient le PanelAgenda (la fenêtre mère).
 	 *
 	 * @see vue.FenetreAgenda
 	 */
@@ -52,8 +52,8 @@ public class PanelAgenda extends JPanel implements ActionListener{
 		fenetreMere = parFenetreMere;
 		card = new CardLayout();
 		setLayout(card);
-			
-		Agenda agenda=null;
+
+		Agenda agenda;
 
 		//Un agenda est déjà sauvegardé ?
 		File fichierAgenda = new File("save" + File.separator + "agenda.ser");
@@ -63,11 +63,11 @@ public class PanelAgenda extends JPanel implements ActionListener{
 		else {
 			agenda=(Agenda) LectureEcriture.lecture(fichierAgenda);
 		}
-				
+
 		PanelFilsCalendrier calendrier = new PanelFilsCalendrier();
 		PanelFormulaire formulaire = new PanelFormulaire(new Date());
 		PanelAffichage panelAffichage = new PanelAffichage(agenda);
-		
+
 		Controleur controleur = new Controleur(agenda, formulaire, calendrier, panelAffichage);
 
 		add(calendrier, 0);
@@ -88,18 +88,18 @@ public class PanelAgenda extends JPanel implements ActionListener{
 		if(event.getActionCommand().compareTo("Calendrier")==0) {
 			card.first(this);
 		}
-		
+
 		else if(event.getActionCommand().compareTo("Evenement")==0) {
 			card.first(this);
 			card.next(this);
 		}
-		
+
 		else if(event.getActionCommand().compareTo("Semaine")==0) {
 			card.last(this);
 		}
-		
+
 		else if(event.getActionCommand().compareTo("Fermer")==0) {
-			int quitter = JOptionPane.showConfirmDialog(null, "Etes-vous sûre de vouloir quitter l'application ?", "test", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			int quitter = JOptionPane.showConfirmDialog(null, "Etes-vous sûr de vouloir quitter l'application ?", "Fermer", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 			if(quitter==JOptionPane.OK_OPTION)
 				fenetreMere.dispose();
 		}

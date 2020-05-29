@@ -3,8 +3,8 @@ package modeles;
 import javax.swing.JButton;
 
 /**
- * Abstraction d'un bouton auquel on associe un objet de type Date.
- * Appartient au package Modeles.
+ * <b>Abstraction d'un bouton auquel on associe un objet de type Date.<br>
+ * Appartient au package modeles.</b>
  * 
  * @author Antoine Limerutti
  * 
@@ -16,6 +16,8 @@ import javax.swing.JButton;
 public class BoutonDate extends JButton {
 	/**
 	 * Date associée au bouton.
+	 *
+	 * @see modeles.Date
 	 */
 	private Date date;
 
@@ -46,9 +48,9 @@ public class BoutonDate extends JButton {
 	}
 
 	/**
-	 * Change l'objet Date lié au bouton.
+	 * Modifieur du champ date.
 	 * 
-	 * @param parDate valeur que l'on veut donner au champ date.
+	 * @param parDate Date ayant la valeur que l'on veut donner au champ date.
 	 * 
 	 * @author Antoine Limerutti
 	 * 
@@ -56,9 +58,9 @@ public class BoutonDate extends JButton {
 	public void setDate(Date parDate) {
 		this.date = parDate;
 	}
-	
+
 	/**
-	 * Retourne l'objet Date lié au bouton.
+	 * Acesseur du champ date.
 	 * 
 	 * @return Date qui correspond à la valeur du champ date.
 	 * 

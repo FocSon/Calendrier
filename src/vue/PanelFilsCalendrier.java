@@ -14,8 +14,8 @@ import controleur.Controleur;
 import modeles.Date;
 
 /**
- * Panel qui affiche le panelMois.
- * Appartient au package Vue.
+ * <b>Panel qui affiche le panelMois.<br>
+ * Appartient au package vue.</b>
  *
  * @author Antoine Limerutti
  *
@@ -27,47 +27,47 @@ import modeles.Date;
  */
 public class PanelFilsCalendrier extends JPanel implements ActionListener {
 	/**
-	 * Panel qui vas contenir et afficher le nom du mois
+	 * JPanel qui vas contenir et afficher le nom du mois.
 	 *
 	 * @see javax.swing.JPanel
 	 */
 	private JPanel panelNord;
 
 	/**
-	 * Panel qui vas contenir le panelMois
+	 * JPanel qui vas contenir le panelMois.
 	 *
 	 * @see vue.PanelMois
 	 */
 	private PanelMois panelCentre;
 
 	/**
-	 * Panel contenant les boutons qui vont permettre de changer de mois
+	 * JPanel contenant les boutons qui vont permettre de changer de mois.
 	 *
 	 * @see javax.swing.JPanel
 	 */
 	private JPanel panelSud;
 
 	/**
-	 * CardLayout qui vas contenir tout les noms des mois
+	 * CardLayout qui vas contenir tout les noms des mois.
 	 *
 	 * @see java.awt.CardLayout
 	 */
 	private CardLayout cardLabelMois;
 
 	/**
-	 * Boutons qui permettent de changer le mois courant
+	 * Boutons qui permettent de changer le mois courant.
 	 *
 	 * @see javax.swing.JButton
 	 */
 	private JButton [] boutons;
 
 	/**
-	 * Entier qui indique le mois courant
+	 * Entier qui indique le mois courant.
 	 */
 	private int moisAffiche;
 
 	/**
-	 * Constructeur qui vas construire et s'ajouter les différents panels qui le composent.
+	 * Constructeur qui vas construire et ajouter à l'objet les différents panels qui le composent.
 	 *
 	 * @author Antoine Limerutti
 	 */
@@ -93,7 +93,7 @@ public class PanelFilsCalendrier extends JPanel implements ActionListener {
 		panelNord.setLayout(cardLabelMois);
 		
 		JLabel [] labelsMois = new JLabel [12];
-		String mois[]= {"Jan.", "Fev.", "Mars", "Avr.", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Dec."};
+		String []mois= {"Jan.", "Fev.", "Mars", "Avr.", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Dec."};
 
 		//paramétrer les labels des mois et les ajouter au panelNord.
 		for (int i=0; i<labelsMois.length; i++) {
